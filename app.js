@@ -38,7 +38,7 @@ const Blog=require('./models/blog');
 const User=require('./models/user');
 const Comment=require('./models/comment');
 const middleware=require("./middleware/index");
-const PORT=process.env.Port ||5000;
+const PORT=process.env.PORT ||5000;
 const Ip=process.env.IP ||'0.0.0.0';
 const url =process.env.DATABASEURL||"mongodb://localhost:27017/Daily_mail";
 
