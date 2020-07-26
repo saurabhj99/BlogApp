@@ -1,0 +1,6 @@
+<%- include('partials/header') %>
+<form method="POST" action="/blog/<%=blog_id%>/comment/<%=comment._id%>/edit?_method=PUT">
+<input type='text' name='text' value="<%=comment.text%>" placeholder="Add your comment">
+<input type='submit' value="Comment">
+</form>
+<%- include('partials/footer') %>

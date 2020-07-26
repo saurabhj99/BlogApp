@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+
+<form  id="edit_profile" action="/profile/<%=currentUser._id %>" method="POST" enctype="multipart/form-data">
+    <div>
+        <input type="text" name="username" value="<%= currentUser.username %>">
+    </div>
+    <div>
+        <input type="file" name="profile_image" accept="image/*">
+    </div>
+    <div>
+        <input type="text" name="about" placeholder="Write about yourself">
+    </div>
+    <div>
+        <input type="text" name="twitter" placeholder="Add your twitter handle">
+    </div>
+    <div>
+        <input type="submit" value="Save">
+    </div>
+
+</form>
+<%- include('partials/footer') %>

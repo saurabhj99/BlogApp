@@ -1,0 +1,23 @@
+<%- include('partials/header') %>
+<div id='blogs'>
+<form  method="POST"  action="/create" >
+
+<div>
+    <label for='Ttl'>Blog Title</label>
+<input name='title'  id='Ttl'  placeholder="Enter Blog Title Here" type='text' required>
+</div>
+<div>
+<label for='img'>Image</label>
+<input name='image' id='img'  placeholder="Image Link Here" type='text' required>
+</div>
+<div>
+<label for='Content'>Text</label>
+<textarea id='Content' name='content' placeholder='Type Your Blog Content Here' required></textarea>
+</div>
+<div>
+<button type="submit">Create</button>
+</div>
+
+</form>
+</div>
+<%- include('partials/footer') %>

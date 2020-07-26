@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+<div class="column">
+<% Blogs.forEach((blog)=>{ %>
+    
+    <div class="row">
+    
+    <img src="<%= blog.image %>">
+    <p><strong><%= blog.title %></strong></p>
+    <p><%= blog.created.toDateString() %></p>
+    <p><%- blog.content.substring(0,100) %>...<a href='/blog/<%= blog._id%>'>Read More</a></p>
+
+</div>
+
+<%}) ;%>
+</div>
+    
+
+<%- include('partials/footer') %>
