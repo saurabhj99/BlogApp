@@ -106,7 +106,7 @@ app.get("/register",(req,res)=>{
 })
 
 app.post('/register',(req,res)=>{
-    const user={email:req.body.email,username:req.body.username};
+    const user=req.body;
     User.register(user,req.body.password,(err,usercreated)=>{
         if(err){
             console.log(err);

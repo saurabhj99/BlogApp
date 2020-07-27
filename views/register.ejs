@@ -2,7 +2,7 @@
 <div id='bg-img'>
   <img src='/images/hotel-blog.png'>
 </div>
-<div id='login-form'>
+<div id='register-form'>
 
 <form  method="POST" action='/register'>
     
@@ -11,9 +11,9 @@
   <input type='email'  placeholder='Email' name='email'>
 </div>
 <div>
-  <select id=select_bar>
-    <option>Male</option>
-    <option>Female</option>
+  <select  name="gender" id=select_bar>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
   </select>
 </div>
     <div>
@@ -23,9 +23,9 @@
   <input type='password' placeholder='Password' name='password' >
 </div>
 <div>
-    <button type='submit'>Signup</button>
+    <button id="login-register_btn" type='submit'>Signup</button>
   </div>
-<div>
+<div class="fglinks">
     <a href="#" class="fb btn">
         <i class="fa fa-facebook fa-fw"></i> Signup with Facebook
        </a>

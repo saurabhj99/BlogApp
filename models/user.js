@@ -8,6 +8,7 @@ const UserSchema=new mongoose.Schema({
     about:String,
     follower:[{type:mongoose.Schema.Types.ObjectId}],
     following:[{type:mongoose.Schema.Types.ObjectId}],
+    gender:String,
     profile_pic:String,
     twitac:String
     })

@@ -258,62 +258,9 @@ background-color: palegoldenrod;
         clear: both;
       }
 */
-#login-form{
-    font-family: 'Kanit', sans-serif;
-    opacity: 0.9;
-   background-color:black;
-   width:100%;
-   max-width: 400px;
-   position: relative;
-   padding: 20px 0px 20px 0px;
-   margin:auto;
-   margin-top: 60px;
-   text-align: center;
-   z-index: 0;
-   color:white;
-   font-family: 'Noto Sans', sans-serif;
-  
-}
 
-#login-form label{
-text-align: left;
-}
 
-#login-form p{
-    color:white;
-    
-    font-size: 30px;
-    letter-spacing: 1px;
-    }
-#login-form input {
-    background-color: black;
-    color:white;
-    margin-top: 20px;
-    padding:2px 0px 2px 4px;
-    height:35px;
-    width:90%;
-    border:none;
-    border-bottom:1px solid lightslategray;
 
-}
-
-#select_bar{
-align-self: flex-start;    
-}
-
-#login-form button{
-    
-    margin:40px auto;
-    width:90%;
-    height:30px;
-    background-color:red;
-    border:none;
-    color:white;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 18px;
-    
-}
 
 .comment{
     border:none;
@@ -421,3 +368,95 @@ align-self: flex-start;
     padding:10px;
 }
 
+#register-form{
+    width:90%;
+    max-width:400px;
+    margin: 0 auto;
+    margin-top: 40px;
+    font-family: 'Kanit', sans-serif;
+    opacity: 0.9;
+    z-index: 0;
+    background-color:black;
+    padding: 20px 0px 20px 0px;
+    
+    
+}
+#register-form input{
+    display: block;
+    width:80%;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding:2px 0px 2px 4px;
+    height:35px;
+    
+    border: none;
+    border-bottom: 1px solid grey;
+    background: transparent;
+    color:white;
+    
+}
+
+#register-form select{
+    width:30%;
+    display: block;
+    margin-top: 20px;
+    margin-left: 10%;
+    padding:2px 0px 2px 4px;
+    height:35px;
+    background-color: transparent;
+    color: white;
+    border:none;
+    border-bottom:1px solid grey;
+}
+
+
+#register-form p{
+    color:white;
+    font-size: 30px;
+    letter-spacing: 1px;
+    
+    text-align: center;
+}
+
+.fglinks{
+    text-align:center;
+    
+}
+
+.fglinks a{
+    text-decoration: none;
+    color:white;
+}
+
+
+#login-register_btn{
+    display:block;
+    margin:0 auto;
+    margin-top: 40px;
+    margin-bottom:20px;
+    width:90%;
+    height:30px;
+    background-color:#32CD32;
+    border:none;
+    color:white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.5s all;
+    
+}
+/*#register-form input:hover:focus::placeholder{
+    color:blue;
+    
+    
+}*/
+#register-form input:hover{
+    border-bottom: 2px solid blue;
+}
+
+
+#login-register_btn:hover{
+    background-color: white;
+    color:#32CD32;
+    border:2px solid #32CD32;
+}
