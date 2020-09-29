@@ -18,13 +18,12 @@
 <% if(isLoggedIn){%>    
 <% if(currentUser && !(currentUser._id.equals(Blog.author.id))){%>
     <% const following = currentUser.following;
-       let action
-        if(following.includes(Blog.author.id)){ %>
-            <button id="fl_btn"  data-action="Unfollow" data-follower="<%= currentUser._id %>" data-following="<%= Blog.author.id %>"  onclick="follows(this.id)" >Unfollow</button>   
-        
-       <% }else{%>
-        <button id="fl_btn"  data-action="Follow" data-follower="<%= currentUser._id %>" data-following="<%= Blog.author.id %>"  onclick="follows(this.id)" >Follow</button>
-    <% } %>
+       var action=following.includes(Blog.author.id)? "Unfollow":"Follow"; %>
+       <% if((following.includes(Blog.author.id))){%>
+        <button id="fl_btn" class="followed" data-action="<%=action%>" data-follower="<%= currentUser._id %>" data-following="<%= Blog.author.id %>"  onclick="follows(this.id)" >Follow</button>
+        <%}else{%>
+        <button id="fl_btn" class="unfollowed" data-action="<%=action%>" data-follower="<%= currentUser._id %>" data-following="<%= Blog.author.id %>"  onclick="follows(this.id)" >Follow</button>
+        <% } %>
         <% } %>
 <%} %>
 </div>
@@ -39,11 +38,7 @@
 </button>
 </form>
 
-<script>
-    
-   
-    </script>
-    </head>
+
 <% Blog.comments.forEach((comment)=>{ %>
     <%let date= comment.created.toDateString() %>
     <% date=date.slice(4,date.length) %>

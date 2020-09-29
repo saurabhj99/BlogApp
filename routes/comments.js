@@ -1,5 +1,5 @@
 const express=require("express");
-const router=express.Router({mergerouterams:true});
+const router=express.Router({mergeParams:true});
 
 
 const Blog=require("../models/blog");
@@ -17,6 +17,7 @@ router.get("/",middleware.isLoggedIn,(req,res)=>{
     
 })
 router.post("/",middleware.isLoggedIn,(req,res)=>{
+    console.log(req.params.id);
     Blog.findById(req.params.id,(err,foundblog)=>{
         if(err){
             console.log(err);

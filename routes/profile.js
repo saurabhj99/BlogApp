@@ -34,11 +34,11 @@ const upload = multer({ storage: storage,
 
 
 
-router.get("/profile",middleware.isLoggedIn,(req,res)=>{
+router.get("/",middleware.isLoggedIn,(req,res)=>{
     res.render("createprofile");
 })
 
-router.post("/profile/:id",middleware.isLoggedIn,upload.single('profile_image'),(req,res)=>{
+router.post("/:id",middleware.isLoggedIn,upload.single('profile_image'),(req,res)=>{
     const file=req.file;
     
     console.log(file)

@@ -56,7 +56,7 @@
     width:auto;
     position: relative;
     letter-spacing: 3px;
-    padding:15px 10px 0px 0px;
+    padding:15px 5px 0px 0px;
     float:left;
     color:#181818;
     font-size:30px;
@@ -64,9 +64,9 @@
 
 }
 .nav img{
-    margin-top: 5px; 
+    margin-top: 8px; 
     position: relative; 
-    height:48px;
+    height:50px;
     width:50px;
 }
 
@@ -372,17 +372,17 @@ background-color: palegoldenrod;
 #register-form{
     width:90%;
     max-width:400px;
+    color:white;
     margin: 0 auto;
     margin-top: 40px;
     font-family: 'Kanit', sans-serif;
-    opacity: 0.9;
     z-index: 0;
     background-color:black;
     padding: 20px 0px 20px 0px;
     
     
 }
-#register-form input{
+#register-form input[type="text"],input[type="password"],input[type="email"]{
     display: block;
     width:80%;
     margin: 0 auto;
@@ -408,6 +408,15 @@ background-color: palegoldenrod;
     color: white;
     border:none;
     border-bottom:1px solid grey;
+}
+
+#register-form input[type="checkbox"]{
+    margin-left:10% ;
+    margin-top: 20px;
+    width:15px;
+    height:15px;
+   
+    color: white;
 }
 
 
@@ -460,4 +469,21 @@ background-color: palegoldenrod;
     background-color: white;
     color:#32CD32;
     border:2px solid #32CD32;
+}
+.unfollowed{
+   border-radius: 5px;
+   padding: 5px;
+   color:white;
+   background-color: rgb(31, 114, 182);
+   border:none;
+   transition: 0.8s all;
+}
+
+.followed{
+    background-color: white;
+    color:black;
+    border:1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    transition: 0.8s all;
 }
