@@ -1,0 +1,1 @@
+A simple Blog app where a Blog writer can create new Blogs and readers can review those blogs follow their favourite blog writer.
