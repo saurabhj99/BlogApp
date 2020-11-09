@@ -4,11 +4,11 @@ const blogSchema=new mongoose.Schema({
     image:String,
     content:String,
     created:{type:Date,default:Date.now},
-    author:{ id:{type:mongoose.Schema.Types.ObjectId,
-             ref:"User"
-        },
-      username:String,
-      profile_pic:String
+    author:{ username:String,
+             profile_pic:String,
+             id:{type:mongoose.Schema.Types.ObjectId,
+                 ref:"User"},
+      
     
     },
     comments:[{type:mongoose.Schema.Types.ObjectId,

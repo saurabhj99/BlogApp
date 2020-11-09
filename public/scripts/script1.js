@@ -1,3 +1,34 @@
+const { estimatedDocumentCount } = require("../../models/user");
+
+function uploadfile(){
+document.getElementById('img').click();
+}
+
+function uploadProfile(){
+  const profile_pic=document.getElementById('profile_upload');
+  const form=document.getElementById('pform');
+  const formData=new FormData(form);
+  profile_pic.addEventListener('click',()=>{
+    const inp=document.createElement("input");
+    inp.name="profile_image";
+    inp.type="file";
+    inp.accept="image/*";
+    inp.id="pfpic";
+    inp.hidden=true;
+    const uploadBtn=document.getElementById('pfpic')
+    if(!uploadBtn){
+    document.getElementById('user_profile_pic').appendChild(inp); } 
+    inp.click();
+    inp.addEventListener('change',()=>{
+      formData.append("profile_image", inp.files[0],inp.files[0].filename);
+    })
+    
+    
+  })
+}
+
+
+
 
 function postComment(FormElement)
 {
@@ -47,4 +78,21 @@ if(input.type==="password"){
 }else{
   input.type="password"
 }
+}
+
+function changestatus(){
+  const container=document.getElementById("user_info");
+  const edit_btn=document.getElementById("Edit_btn");
+  const save_Btn=document.getElementById("save_Btn");
+  edit_btn.style.display="none";
+  save_Btn.style.display="inline";
+    const input_fields=container.querySelectorAll("input[type='text']")
+    input_fields.forEach((input_field)=>{
+     
+      input_field.classList.remove("onlyReadable");
+      input_field.readOnly=false;
+      
+    
+    
+  })
 }

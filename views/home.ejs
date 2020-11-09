@@ -4,7 +4,7 @@
     
     <div class="row">
     
-    <img src="<%= blog.image %>">
+    <img src="/profile/<%= blog.image %>">
     <p><strong><%= blog.title %></strong></p>
     <p><%= blog.created.toDateString() %></p>
     <p><%- blog.content.substring(0,100) %>...<a href='/blog/<%= blog._id%>'>Read More</a></p>

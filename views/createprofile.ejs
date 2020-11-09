@@ -1,21 +1,48 @@
 <%- include('partials/header') %>
 
-<form  id="edit_profile" action="/profile/<%=currentUser._id %>" method="POST" enctype="multipart/form-data">
+<form action="/profile/<%=currentUser._id %>" id="pform" method="POST" enctype="multipart/form-data">
+    <div class="user_profile">
+    <div id="user_profile_pic">
+        <button  id="profile_upload" onclick="uploadProfile()" type="button">
+            <% if(!currentUser.profile_pic){ %>
+                <i class="fa fa-user"></i>
+            <% }else{%>
+            <img style="width:inherit;height:100%; border-radius:80px;" src="/profile/<%=currentUser.profile_pic %>">
+             <%}%>
+            </button>
+    </div>
+    <div id="user_info">
+    
+    <h1>User Info</h1>
+    <hr>
     <div>
-        <input type="text" name="username" value="<%= currentUser.username %>">
+        <label for="name">Name<br> </label>
+        <input id="name" class="onlyReadable"  type="text" name="f_name"  placeholder="Enter Your Name" readonly/>
+    </div>
+    
+    <div>
+        <label for="bio">Bio<br></label>
+        <input  id="bio" class="onlyReadable" type="text" name="about" placeholder="Write about yourself" readonly/>
+    </div>
+    <h1>Social</h1>
+    <hr>
+    <div>
+        <span><i class="fa fa-envelope"></i> </span><input class="onlyReadable" type="text" name="email"  placeholder="Email" readonly>
     </div>
     <div>
-        <input type="file" name="profile_image" accept="image/*">
+        <span><i class="fa fa-twitter"></i> twitter.com/</span><input class="onlyReadable" type="text" name="twitter" placeholder="username" readonly>
     </div>
     <div>
-        <input type="text" name="about" placeholder="Write about yourself">
+        <span><i class="fa fa-instagram"></i> instagram.com/</span><input class="onlyReadable" type="text" name="instagram" placeholder="username" readonly/>
     </div>
     <div>
-        <input type="text" name="twitter" placeholder="Add your twitter handle">
+        <span><i class="fa fa-facebook"></i> facebook.com/</span><input class="onlyReadable" type="text" name="fb" placeholder="Pagename"/>
     </div>
     <div>
-        <input type="submit" value="Save">
+        <button class="submit_btn" id="save_Btn" style="display:none;" type="submit">Save <i class="fa fa-save"></i></button>
+        <button class="submit_btn" type="button" id="Edit_btn" onclick="changestatus()">Edit <i class="fa fa-pencil"></i></button>
     </div>
-
+</div>
+</div>
 </form>
 <%- include('partials/footer') %>

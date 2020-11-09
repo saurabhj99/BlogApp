@@ -8,7 +8,7 @@ const passport=require('passport');
 const passportLocalMongoose=require('passport-local-mongoose');
 const session=require('express-session');
 const flash=require("connect-flash");
-
+const multer=require('multer');
 
 const Blog=require('./models/blog');
 const User=require('./models/user');

@@ -3,11 +3,11 @@
     font-family: 'Calibri', sans-serif ;
 }</style>
 <div class='container'>
-<img style='margin-top:30px;' src='<%= Blog.image %>'>
+<img style='margin-top:30px;' src='/profile/<%= Blog.image %>'>
 <%let date= Blog.created.toDateString() %>
 <% date=date.slice(4,date.length) %>
 <div id="author_info">
-    <% if(!Blog.author.profile_pic){ %>
+    <% if(!(Blog.author["profile_pic"])){%>
     <img id="profile_pic" src="https://www.pngarts.com/files/3/Avatar-Transparent-Image.png">
     <% }else{ %>
     <img id="profile_pic" src="/profile/<%=Blog.author.profile_pic %>">
@@ -18,8 +18,9 @@
 <% if(isLoggedIn){%>    
 <% if(currentUser && !(currentUser._id.equals(Blog.author.id))){%>
     <% const following = currentUser.following;
-       var action=following.includes(Blog.author.id)? "Unfollow":"Follow"; %>
-       <% if((following.includes(Blog.author.id))){%>
+       var action=(following.indexOf(Blog.author.id)>-1)? "Unfollow":"Follow"; 
+       console.log(typeof following[0])%>
+       <% if(following.indexOf(Blog.author.id) > -1){%>
         <button id="fl_btn" class="followed" data-action="<%=action%>" data-follower="<%= currentUser._id %>" data-following="<%= Blog.author.id %>"  onclick="follows(this.id)" >Follow</button>
         <%}else{%>
         <button id="fl_btn" class="unfollowed" data-action="<%=action%>" data-follower="<%= currentUser._id %>" data-following="<%= Blog.author.id %>"  onclick="follows(this.id)" >Follow</button>

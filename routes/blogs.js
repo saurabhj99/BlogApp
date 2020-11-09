@@ -1,9 +1,8 @@
 const express=require("express");
 const router=express.Router(/*{mergerouterams:true}*/);
-
 const Blog=require("../models/blog");
 const middleware=require("../middleware/index");
-
+const upload=require("../classes/upload");
 
 //==================================Create Blog=========================================//
 router.get("/new",middleware.isLoggedIn,(req,res)=>{
@@ -13,9 +12,9 @@ router.get("/new",middleware.isLoggedIn,(req,res)=>{
 //========================================================================================//
 
 
-router.post("/new",middleware.isLoggedIn,(req,res)=>{
+router.post("/new",upload.single('image'),middleware.isLoggedIn,(req,res)=>{
     const title=req.body.title;
-    const image=req.body.image;
+    const image=req.file.filename;
     const content=req.body.content;
     const author={id:req.user._id,
         username:req.user.username,profile_pic:req.user.profile_pic};

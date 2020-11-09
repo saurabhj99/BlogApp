@@ -1,21 +1,23 @@
 <%- include('partials/header') %>
 <div id='blogs'>
-<form  method="POST"  action="/blog/new" >
+<form  method="POST" enctype=multipart/form-data action="/blog/new" >
 
 <div>
-    <label for='Ttl'>Blog Title</label>
+    <label for="Ttl">Blog Title</label>
 <input name='title'  id='Ttl'  placeholder="Enter Blog Title Here" type='text' required>
 </div>
 <div>
 <label for='img'>Image</label>
-<input name='image' id='img'  placeholder="Image Link Here" type='text' required>
+<button onclick="uploadfile()" class="Upload_btn"><i class="material-icons" style="font-size:60px;">add_a_photo</i></button>
+<input id="img" name="image" type="file" accept="image/*" hidden required>
+
 </div>
 <div>
 <label for='Content'>Text</label>
 <textarea id='Content' name='content' placeholder='Type Your Blog Content Here' required></textarea>
 </div>
 <div>
-<button type="submit">Create</button>
+<button class="submit_button" type="submit">Publish</button>
 </div>
 
 </form>
