@@ -68,4 +68,19 @@ router.put("/:id/edit",middleware.checkBlogOwnership,(req,res)=>{
 })
 //=========================================================================================//
 
+
+router.delete("/:id/delete",middleware.checkBlogOwnership,(req,res)=>{
+    Blog.findByIdAndRemove(req.params.id,(err,deletedBlog)=>{
+        if(err){
+            res.redirect("/");
+        }
+        else{
+            res.redirect("/");
+            req.flash("Post deleted successfully","success");
+        }
+    })
+})
+
+
+//=========================================================================================//
 module.exports=router;

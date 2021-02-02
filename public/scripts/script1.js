@@ -1,4 +1,4 @@
-const { estimatedDocumentCount } = require("../../models/user");
+
 
 function uploadfile(){
 document.getElementById('img').click();
@@ -33,8 +33,6 @@ function uploadProfile(){
 function postComment(FormElement)
 {
   var xhr = new XMLHttpRequest();
-  xhr.onload = function(){ alert (xhr.responseText); } // success case
-  xhr.onerror = function(){ alert (xhr.responseText); } // failure case
   xhr.open (FormElement.method, FormElement.action, true);
   var formData = new FormData(FormElement)
  
@@ -96,3 +94,5 @@ function changestatus(){
     
   })
 }
+
+

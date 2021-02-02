@@ -17,10 +17,10 @@ router.get("/",middleware.isLoggedIn,(req,res)=>{
     res.render("createprofile");
 })
 
-router.post("/:id",middleware.isLoggedIn,(req,res)=>{
+router.post("/:id",upload.single('profile_image'),middleware.isLoggedIn,(req,res)=>{
     const file=req.file;
-    if (req.body.f_name){
-        upload.single('profile_image');
+    if (req.body){
+        
     User.findByIdAndUpdate(req.params.id,{full_name:req.body.f_name,about:req.body.about,twitac:req.body.twitter,profile_pic:req.file.filename},(err,founduser)=>{
         if(err){
             console.log(err);

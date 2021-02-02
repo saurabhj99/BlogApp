@@ -1,0 +1,632 @@
+/* remove the deafult margin*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+  }
+ /*Avoid black borders in chrome and other browsers on hover or focus*/
+*,*:focus,*:hover{
+    outline:none;
+}
+ 
+ #bg-img img{
+    
+    height: 100%;
+    filter:contrast(80%),brightness(50%),blur(2px);
+    object-fit: cover;
+    width:100%;
+    position: fixed;
+    z-index: -2;
+}
+  
+.nav{
+    font-family: 'Kanit', sans-serif;
+    height:70px;
+    background-color:rgb(254, 254, 250);
+    filter: alpha(opacity=50); 
+    border-bottom:1px solid #C0C0C0;
+    
+    
+    
+}
+.navlinks{
+    display: flex;
+    letter-spacing: 2px;
+    list-style: none;
+    max-height:90;
+    padding: 25px;
+    height:100%;
+    float:right;
+    
+}
+.navlinks li a{
+    color:#181818;
+    font-size: 16px;
+    text-decoration: none;
+}
+.navlinks li{
+    padding-right: 25px;
+}
+.nav a:hover{
+    color: rgb(51, 228, 228);
+    
+}
+.hamburger{
+    display: none;
+}
+.nav h1{
+    width:auto;
+    position: relative;
+    letter-spacing: 3px;
+    padding:15px 5px 0px 0px;
+    float:left;
+    color:#181818;
+    font-size:30px;
+    
+
+}
+.nav img{
+    margin-top: 8px; 
+    position: relative; 
+    height:50px;
+    width:50px;
+}
+
+#blogs{
+    width:100%;
+    max-width: 350px;
+    margin:auto;
+    margin-top: 60px;
+    height:80%;
+    
+    letter-spacing: 1px;
+    font-family: 'Noto Sans', sans-serif;
+    
+}
+#blogs label{
+    display: block;
+    
+
+}
+
+#blogs input{
+    font-family: 'Times New Roman', sans-serif;
+    border:1px solid lightslategray;
+    padding-top:3px;
+    padding-left: 10px;
+    margin-bottom: 30px;
+    width:100%;
+    height:35px;
+    transition-delay: 0.1s;
+    border-radius: 3px;
+
+}
+
+
+#blogs textarea{
+    font-family: 'Times New Roman';
+    width:100%;
+    height:130px;
+    border-radius: 3px;
+    border:1px solid lightslategray;
+    padding: 10px 0px 0px 10px;
+}
+#blogs button{
+    margin-top: 10px;
+    width:80px;
+    
+    background-color:white;
+    border:2px solid #0276FD;
+    color:#0276FD;
+    border-radius: 4px;
+    font-size: 15px;
+    
+}
+
+#submit_button{
+    
+}
+#blogs input[type="text"]:focus{
+background-color: palegoldenrod;
+}
+#blogs input[type="text"]:hover{
+    border: 1px solid steelblue;
+    box-shadow:0px 1px 3px steelblue;
+}
+#blogs textarea:focus{
+    background-color: palegoldenrod;
+    }
+#blogs textarea:hover{
+        border: 1px solid steelblue;
+        box-shadow:0px 1px 2px steelblue;
+    }
+#blogs button:hover{
+    color:white;
+    background-color: #0276FD;
+}
+.row{
+    height:100px;
+    width:90%;
+    font-family: 'Calibri', sans-serif ;
+    margin:20px auto;
+    border:1px solid black;
+   
+}
+
+
+@media screen and (max-width: 796px) {
+    
+    .row {
+      width: 90%; 
+      height:100%;
+      margin:20px auto;/* The width is 100%, when the viewport is 800px or smaller */
+    }
+    .row img{
+        width: 100%; }
+    .nav {
+            position: relative;
+            
+          }
+    .nav h1{
+        letter-spacing: none;
+        
+    }
+    .nav img{
+        max-width: 40px;
+    
+    }
+    .container{
+        width:80%;
+        padding:10px;
+    }
+    .container #commentform input{
+        width:60%;
+        max-width:200px;
+    }
+    .container #commentform button{
+        padding:none;
+        
+    }
+    
+    .hamburger {
+        position: absolute;
+        display: block;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+      }
+    .line{
+        
+        width:30px;
+        border-radius: 4px;
+        margin: 5px;
+        height:4px;
+        background-color: black;
+    }
+    .navlinks{
+        position: fixed;
+        background: #5b78c7;
+        height: 100vh;
+        width: 100%;
+        z-index:1;
+        flex-direction: column;
+        clip-path: circle(100px at 90% -30%);
+        -webkit-clip-path: circle(100px at 90% -30%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+    .navlinks li {
+        opacity: 0;
+        padding-top:25px;
+        padding-bottom:25px;
+        
+      }
+    .navlinks li a {
+        color: white;
+        font-size: 25px;
+      }
+      .navlinks.open {
+        clip-path: circle(1000px at 90% -5%);
+        -webkit-clip-path: circle(1000px at 90% -5%);
+        pointer-events: all;
+      }
+      li.fade {
+        opacity: 1;
+      }
+    }
+/*For Mobile-phone */
+
+  
+.row img{
+   height:80px;
+    float: left;
+    object-fit: contain;
+    padding: 10px 10px 0px 10px;
+}
+
+     /* Create three equal columns that floats next to each other */
+     /*  .column {
+        margin-top: 10px;
+        margin-left:20px;
+        float: left;
+        width: 33.33%;
+        padding: 10px;
+        border:1px solid black;
+        
+      }*/
+       /* Should be removed. Only for demonstration */
+      /* Clear floats after the columns */
+      /*
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+*/
+
+
+
+
+.comment{
+    border:none;
+    background-color: lightgrey;
+    border-radius: 25px ;
+    height:80px;
+    margin: 5px;
+    max-height: 300px;
+    width:max-content;
+    padding:10px;
+    padding-bottom: 10px;
+}
+.comment form{
+    display:inline;
+    margin-left: 10px;
+}
+.comment .date{
+    font-size: 13px;
+    padding-top:2px;
+    float: left;
+}
+.comment .user-name{
+    font-size: 15px;
+}
+.comment button{
+    border: none;
+    font-size: 12px;
+    background-color: transparent;
+    padding-top:none;
+    transition: 0.2s all;
+}
+.comment .deletebtn:hover{
+    color:red;
+}
+.comment .editbtn:hover{
+    color:blue;
+}
+.container{
+    width:100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.container img{
+   
+    width:100%;
+   height:80%;
+   
+}
+.container .blog-content{
+    text-align: justify;
+    width:100%;
+}
+.container #commentform{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 400px;
+    width:90%;
+}
+.container #commentform input {
+ width:360px;
+ padding:10px;
+ height:35px;
+ border:1px solid gray;
+ border-radius:25px;
+
+}
+.container #commentform button{
+    border:none;
+    background-color: transparent;
+    color:steelblue;
+    padding: 4px;
+    transition: 0.5 all;
+}
+.container #commentform button:hover{
+    color:blue;
+}
+
+#profile_pic{
+    float: left;
+    border-radius:100%;
+    height:80px;
+    width:80px;
+    border-top: 4px solid blue;
+    border-bottom: 4px solid red;
+    border-left: 4px solid yellow;
+    border-right: 4px solid green;
+    
+    padding: 3px;
+}
+
+#edit_profile{
+    width:90%;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding:2%;
+    text-align: center;
+    border:1px solid lightgrey;
+}
+#edit_profile input{
+    
+    margin-top:15px;
+    width:90%;
+    height:30px;
+    padding:10px;
+}
+
+#register-form{
+    width:90%;
+    max-width:400px;
+    color:black;
+    margin: 0 auto;
+    margin-top: 40px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color:#E8E8E8;
+    padding: 20px 0px 20px 0px;
+    box-shadow: 0px 0px 10px rgb(141, 141, 141);
+    
+    
+}
+#register-form input[type="text"],input[type="password"],input[type="email"]{
+    display: block;
+    width:80%;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding:2px 0px 2px 4px;
+    font-size: 16px;
+    height:35px;
+    background-color: #e8e8e8;
+    border: none;
+    border-bottom: 2px solid darkgray;
+    color:black;
+    transition: 0.5s all;
+}
+
+#register-form select{
+    width:30%;
+    display: block;
+    margin-top: 20px;
+    margin-left: 10%;
+    font-size: 16px;
+    padding:2px 0px 2px 4px;
+    height:35px;
+    background-color: transparent;
+    color: black;
+    border:none;
+    border-bottom:2px solid darkgrey;
+}
+
+#register-form input[type="checkbox"]{
+    margin-left:10% ;
+    margin-top: 20px;
+    width:15px;
+    height:15px;
+   
+    color: rgb(0, 0, 0);
+}
+
+
+#register-form p{
+    color:black;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    
+    text-align: center;
+}
+
+
+
+
+#login-register_btn{
+    display:block;
+    margin:0 auto;
+    margin-top: 40px;
+    margin-bottom:20px;
+    width:90%;
+    height:40px;
+    background-color:#32CD32;
+    border:none;
+    color:white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.5s all;
+    
+}
+
+.fglink{
+    text-align: center;
+    
+    
+}
+.fglink >a{
+    text-decoration: none;
+    color: gray;
+}
+.fglink >a:hover{
+    color:black;
+}
+
+
+#register-form input:hover{
+    border-bottom: 2px solid dodgerblue;
+}
+
+
+#login-register_btn:hover{
+    background-color: white;
+    color:#32CD32;
+    border:2px solid #32CD32;
+}
+.unfollowed{
+   border-radius: 5px;
+   padding: 5px;
+   color:white;
+   background-color: rgb(31, 114, 182);
+   border:none;
+   transition: 0.8s all;
+}
+
+.followed{
+    background-color:#e0e0e0;
+    color:black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+    border:1px solid lightgray;
+    border-radius: 5px;
+    padding: 5px;
+    transition: 0.8s all;
+}
+
+.onlyReadable{
+    color:gray;
+}
+
+#user_info input{
+    border:none;
+    border-bottom: 1px solid black;
+}
+
+#user_info div{
+    padding:10px;
+    
+}
+
+
+.user_profile{
+    font-family: Arial, Helvetica, sans-serif;
+    display:flex;
+    width:80%;
+    max-width: 1000px;
+    margin:0 auto;
+    margin-top: 20px;
+    
+}
+
+#user_profile_pic >button{
+    width:60%;
+    height: 180px;
+    border: none;
+    border-radius:50%;
+    
+}
+
+.submit_btn{
+    width:30%;
+    padding: 6px;
+    background-color: rgb(43, 144, 226);
+    color:white;
+    border:none;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+#user_profile_pic button> i{
+    font-size:100px;
+}
+
+.user_profile >#user_profile_pic{
+    flex:30%;
+}
+
+.user_profile >#user_info{
+    flex:70%;
+}
+
+.blog-container{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    width:90%;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1100px;
+    flex-wrap: wrap;
+    max-height: 100%;
+}
+
+.blog{
+    flex-basis: 30%;
+    margin-bottom: 2%;
+    border:2px solid lightgray;
+    padding: 7px;
+    border-radius: 5px;
+    transition: 0.5s all;
+    max-height: 100%;
+    
+}
+
+.img-container{
+    
+    max-width: 100%;
+    padding: 0 auto;
+}
+
+.img-container >img{
+    width:100%;
+    height:190px;
+    object-fit: cover;
+}
+.blog-stats{
+    display: flex;
+    margin-top: 5px;
+    border-top:2px solid #E0E0E0;
+}
+
+.blog-stats >div{
+    font-size: 20px;
+    flex-basis: 33.3%;
+    text-align: center;
+    cursor:pointer;
+}
+
+.blog-stats i{
+    
+    color: black;
+}
+
+
+
+@media  screen and (max-width:930px){
+    .blog-container{
+        flex-direction: column;
+    }
+    .blog{
+        flex:1;
+    }
+    .img-container >img{
+        height: 100%;
+    }
+}
+
+.blog:hover{
+    flex-basis: 30.8%;
+    
+    box-shadow: 0px 0px 15px dodgerblue;
+}
+

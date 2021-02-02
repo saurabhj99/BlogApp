@@ -73,7 +73,7 @@ router.delete("/:comment_id",middleware.checkCommentOwnership,(req,res)=>{
                   console.log(err);
               }
               else{
-                  console.log(Blogfound);
+                  
                 res.redirect('/blog/'+req.params.id);
               }
           })

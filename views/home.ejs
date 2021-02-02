@@ -1,15 +1,28 @@
 <%- include('partials/header') %>
-<div class="column">
+<div class="blog-container">
 <% Blogs.forEach((blog)=>{ %>
     
-    <div class="row">
-    
-    <img src="/profile/<%= blog.image %>">
+    <div class="blog">
+    <div class="img-container">
+        <img src="/profile/<%= blog.image %>">
+    </div>
     <p><strong><%= blog.title %></strong></p>
     <p><%= blog.created.toDateString() %></p>
     <p><%- blog.content.substring(0,100) %>...<a href='/blog/<%= blog._id%>'>Read More</a></p>
+    <% if(currentUser && (currentUser._id.equals(blog.author.id))){ %>
+    <div class="blog-stats">
+        <div><a href="/blog/<%=blog._id%>/edit" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></div>
+        <div>
+            <form id="del_form" method="POST" action="/blog/<%=blog._id%>/delete?_method=DELETE">
+                <a onclick="this.parentNode.submit(); return false;"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+            </form>
+        </div>
+        <div><i class="fa fa-eye" aria-hidden="true"></i></div>
 
-</div>
+    </div>
+    <% } %>
+    </div>
+    
 
 <%}) ;%>
 </div>
