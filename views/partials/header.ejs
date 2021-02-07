@@ -8,42 +8,38 @@
         <link rel="stylesheet" type='text/css' href='/css/style.css'>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Kanit:wght@500&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="https://toert.github.io/Isolated-Bootstrap/versions/3.3.7/iso_bootstrap3.3.7min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500" rel="stylesheet"> 
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
       </head>
         <body>
-            
-            <nav  id='mytopnav' class='nav'>
-                <img  src="/images/logo.png" />
-                <h1>DAILY BLOGS</h1>
-                
-                    <div class="hamburger">
-                        <div class="line"></div>
-                        <div class="line"></div>
-                        <div class="line"></div>
-                    </div>
-                
-                <ul class='navlinks'>
-                   <li><a href="/">HOME</a></li>
-                   <li><a href="/blog/new">CREATE</a></li>
-                   
+          <nav class="navbar">
+            <div class="Logo">
+              <h1>DAILY BLOGS <i class="fas fa-pen-nib"></i></h1>
+            </div>
+            <div class="hamburger-icon">
+                <button onClick="navbarHandler()"><i class="fa fa-bars" aria-hidden="true"></i></button>
+            </div>
+            <div class="navlinks">
+              <ul >
+                  <li><a href="/">HOME</a></li>
+                  <li><a href="/blog/new">CREATE</a></li>
+                  <% if(!currentUser){ %>
+                  <li><a href="/login">LOGIN</a></li>
+                  <li><a href="/register">SIGN UP</a></li>
                   
-                   <% if(!currentUser){ %>
-                    <li><a href="/login">LOGIN</a></li>
-                    <li><a href="/register">SIGN UP</a></li>
-                    
-                    <%}else{%>
-                     <li><a>SIGNED IN AS <%=currentUser.username %></a> </li>
-                     <li><a href="/profile">Profile</a> </li>
-                    <li><a href="/logout">LOGOUT</a></li>
-                    <%} %>
-                </ul>
-            
-               
-               
+                  <%}else{%>
+                    <li><a>SIGNED IN AS <%=currentUser.username %></a> </li>
+                    <li><a href="/profile">Profile</a> </li>
+                  <li><a href="/logout">LOGOUT</a></li>
+                  <%} %>
+             </ul>
+            </div>
         </nav>
+            
+            
         <div class="bootstrap">
             <% if(error && error.length>0){%>
             <div class="alert alert-danger" role="alert">
@@ -57,18 +53,11 @@
                 <%} %>
         </div>
         <script type="text/javascript">
-            const hamburger = document.querySelector(".hamburger");
-             const navLinks = document.querySelector(".navlinks");
-             const links = document.querySelectorAll(".navlinks li");
-             
-             hamburger.addEventListener("click", () => {
-               navLinks.classList.toggle("open");
-               links.forEach(link => {
-                 link.classList.toggle("fade");
-               });
-             });
-             
-             </script>
+          const navbarHandler=()=>{
+            const link=document.getElementsByClassName('navlinks')[0];
+            setTimeout(()=>link.classList.toggle('active'),300);
+          }
+        </script>
             <script  defer type="text/javascript" src="/scripts/script1.js"></script>
                 
         

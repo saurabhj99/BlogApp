@@ -10,62 +10,69 @@
     outline:none;
 }
  
- #bg-img img{
-    
-    height: 100%;
-    filter:contrast(80%),brightness(50%),blur(2px);
-    object-fit: cover;
-    width:100%;
-    position: fixed;
-    z-index: -2;
-}
+.navbar{
+    display:flex;
+    max-width: 100%;
+    flex-wrap: wrap;
+    font-family: 'Noto Sans TC', sans-serif;
+    justify-content: space-between;
+    align-items: center;
+    padding:5px 8px;
+    border-bottom:2px solid #e0e0e0;
+    box-shadow:0px 0px 4px gray;
+  }
   
-.nav{
-    font-family: 'Kanit', sans-serif;
-    height:70px;
-    background-color:rgb(254, 254, 250);
-    filter: alpha(opacity=50); 
-    border-bottom:1px solid #C0C0C0;
-    
-    
-    
-}
+.hamburger-icon{
+    display:none;
+  }
+
+.hamburger-icon>button{
+    background-color:transparent;
+    border:none;
+    margin-right:20px;
+  
+  }
+  
+.hamburger-icon>button>i{
+    font-size:30px;
+  }
+
+.Logo{
+    flex-basis:50%;
+    font-size:20px;
+    padding:8px;
+  }
+  
 .navlinks{
-    display: flex;
-    letter-spacing: 2px;
-    list-style: none;
-    max-height:90;
-    padding: 25px;
-    height:100%;
-    float:right;
-    
-}
-.navlinks li a{
+    flex-basis:40%;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+.navlinks >ul{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type:none;
+  }
+  
+  
+.navlinks>ul>li>a{
+    letter-spacing: 1px;
     color:#181818;
     font-size: 16px;
     text-decoration: none;
+    display:block;
 }
-.navlinks li{
-    padding-right: 25px;
-}
-.nav a:hover{
+
+.navbar a:hover{
     color: rgb(51, 228, 228);
     
 }
-.hamburger{
+.hamburger-icon{
     display: none;
 }
-.nav h1{
-    width:auto;
-    position: relative;
-    letter-spacing: 3px;
-    padding:15px 5px 0px 0px;
-    float:left;
-    color:#181818;
-    font-size:30px;
-    
 
-}
 .nav img{
     margin-top: 8px; 
     position: relative; 
@@ -73,109 +80,118 @@
     width:50px;
 }
 
-#blogs{
-    width:100%;
-    max-width: 350px;
+#blogs-form{
+    max-width: 80%;
     margin:auto;
-    margin-top: 60px;
-    height:80%;
-    
-    letter-spacing: 1px;
-    font-family: 'Noto Sans', sans-serif;
-    
-}
-#blogs label{
-    display: block;
-    
-
+    display:flex;
+    height:600px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    justify-content: center;
+    align-items: center;
 }
 
-#blogs input{
-    font-family: 'Times New Roman', sans-serif;
-    border:1px solid lightslategray;
-    padding-top:3px;
-    padding-left: 10px;
-    margin-bottom: 30px;
-    width:100%;
-    height:35px;
-    transition-delay: 0.1s;
-    border-radius: 3px;
-
+#blogs-form>form{
+    display:flex;
+    flex-direction: column;
+    margin:auto;
+    width:70%;
 }
 
-
-#blogs textarea{
-    font-family: 'Times New Roman';
-    width:100%;
-    height:130px;
-    border-radius: 3px;
-    border:1px solid lightslategray;
-    padding: 10px 0px 0px 10px;
+#blogs-form>form>div{
+    display:flex;
+    flex-direction: column;
 }
-#blogs button{
-    margin-top: 10px;
-    width:80px;
-    
+
+#blogs-form>form>div>input[type="text"]{
+    max-width: 100%;
+    padding:10px 15px;
+    margin:10px;
+    border-radius:5px;
+    border:2px solid lightgray;
+    transition:0.3s all;
+}
+
+#blogs-form>form>div>textarea{
+    max-width: 100%;
+    padding:10px 15px;
+    font-size:16px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    height:150px;
+    margin:10px;
+    border-radius:5px;
+    border:2px solid lightgray;
+    transition:0.3s all;
+}
+
+.Upload_btn{
+    width:100px;
+    padding:6px;
+    margin:10px;
+    border-radius:6px;
+    border:1px solid lightgray;
+    background-color:dodgerblue;
+    color:white;
+    transition:0.3s all;
+}
+
+.Upload_btn:hover{
     background-color:white;
-    border:2px solid #0276FD;
-    color:#0276FD;
-    border-radius: 4px;
-    font-size: 15px;
-    
+    color:dodgerblue;
+
 }
 
 #submit_button{
-    
-}
-#blogs input[type="text"]:focus{
-background-color: palegoldenrod;
-}
-#blogs input[type="text"]:hover{
-    border: 1px solid steelblue;
-    box-shadow:0px 1px 3px steelblue;
-}
-#blogs textarea:focus{
-    background-color: palegoldenrod;
-    }
-#blogs textarea:hover{
-        border: 1px solid steelblue;
-        box-shadow:0px 1px 2px steelblue;
-    }
-#blogs button:hover{
+    width:150px;
+    padding:8px;
+    margin:10px;
+    border-radius:6px;
+    margin:auto;
+    background-color:dodgerblue;
     color:white;
-    background-color: #0276FD;
+    font-size: 16px;
+    border:1px solid lightgray;
+    transition:0.3s all;
 }
-.row{
-    height:100px;
-    width:90%;
-    font-family: 'Calibri', sans-serif ;
-    margin:20px auto;
-    border:1px solid black;
-   
+
+#submit_button:hover{
+    background-color: white;
+    color:dodgerblue;
+    border:2px solid dodgerblue;
+
+}
+
+#blogs-form textarea:hover{
+    border:2px solid dodgerblue;
+}
+#blogs-form input[type="text"]:hover{
+    border:2px solid dodgerblue;
+}
+
+.fglink{
+    text-align:center
+}
+.fglink>a{
+    text-decoration: none;
+    color:gray;
+    font-weight:500;
+    transition:0.1s all;
+}
+.fglink>a:hover{
+    color:black;
+
 }
 
 
-@media screen and (max-width: 796px) {
+
+
+@media screen and (max-width: 800px) {
+    #blogs-form{
+        max-width:90%;
+    }
+    #blogs-form>form{
+        max-width: 90%;
+    }
     
-    .row {
-      width: 90%; 
-      height:100%;
-      margin:20px auto;/* The width is 100%, when the viewport is 800px or smaller */
-    }
-    .row img{
-        width: 100%; }
-    .nav {
-            position: relative;
-            
-          }
-    .nav h1{
-        letter-spacing: none;
-        
-    }
-    .nav img{
-        max-width: 40px;
-    
-    }
     .container{
         width:80%;
         padding:10px;
@@ -189,86 +205,10 @@ background-color: palegoldenrod;
         
     }
     
-    .hamburger {
-        position: absolute;
-        display: block;
-        cursor: pointer;
-        right: 5%;
-        top: 50%;
-        transform: translate(-5%, -50%);
-        z-index: 2;
-      }
-    .line{
-        
-        width:30px;
-        border-radius: 4px;
-        margin: 5px;
-        height:4px;
-        background-color: black;
-    }
-    .navlinks{
-        position: fixed;
-        background: #5b78c7;
-        height: 100vh;
-        width: 100%;
-        z-index:1;
-        flex-direction: column;
-        clip-path: circle(100px at 90% -30%);
-        -webkit-clip-path: circle(100px at 90% -30%);
-        transition: all 1s ease-out;
-        pointer-events: none;
-    }
-    .navlinks li {
-        opacity: 0;
-        padding-top:25px;
-        padding-bottom:25px;
-        
-      }
-    .navlinks li a {
-        color: white;
-        font-size: 25px;
-      }
-      .navlinks.open {
-        clip-path: circle(1000px at 90% -5%);
-        -webkit-clip-path: circle(1000px at 90% -5%);
-        pointer-events: all;
-      }
-      li.fade {
-        opacity: 1;
-      }
+    
+    
     }
 /*For Mobile-phone */
-
-  
-.row img{
-   height:80px;
-    float: left;
-    object-fit: contain;
-    padding: 10px 10px 0px 10px;
-}
-
-     /* Create three equal columns that floats next to each other */
-     /*  .column {
-        margin-top: 10px;
-        margin-left:20px;
-        float: left;
-        width: 33.33%;
-        padding: 10px;
-        border:1px solid black;
-        
-      }*/
-       /* Should be removed. Only for demonstration */
-      /* Clear floats after the columns */
-      /*
-      .row:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-*/
-
-
-
 
 .comment{
     border:none;
@@ -355,7 +295,6 @@ background-color: palegoldenrod;
     border-bottom: 4px solid red;
     border-left: 4px solid yellow;
     border-right: 4px solid green;
-    
     padding: 3px;
 }
 
@@ -457,18 +396,6 @@ background-color: palegoldenrod;
     
 }
 
-.fglink{
-    text-align: center;
-    
-    
-}
-.fglink >a{
-    text-decoration: none;
-    color: gray;
-}
-.fglink >a:hover{
-    color:black;
-}
 
 
 #register-form input:hover{
@@ -622,6 +549,55 @@ background-color: palegoldenrod;
     .img-container >img{
         height: 100%;
     }
+    .hamburger-icon {
+        display: flex;
+        cursor: pointer;
+        flex-basis:20%;
+        justify-content: flex-end;
+        
+    }
+    .Logo{
+        flex-basis:80%;
+    }
+    .navlinks{
+        display:none;
+    }
+    .navbar{
+        padding:0px 8px;
+        box-shadow: none;
+    
+    }
+    .active{
+        display:flex;
+        flex-basis:100%;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+      }
+    
+      .active >ul{
+        display:flex;
+        flex-direction:column;
+        align-items:stretch;
+        width:100%;
+        text-align:center;
+      }
+      .active >ul>li{
+        padding:8px;
+        display:block;
+        border-bottom:1px solid black;
+        background-color:white;
+      }
+      .active >ul>li:hover{
+        background-color:gray;
+        
+      }
+      .active >ul>li>a{
+          display:block;
+      }
+    
+    
+
 }
 
 .blog:hover{
