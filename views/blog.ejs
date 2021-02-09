@@ -1,42 +1,43 @@
 <%- include('partials/header') %>
-<style type="text/css">p{
-    font-family: 'Calibri', sans-serif ;
-}</style>
+
 <div class='container'>
 <img style='margin-top:30px;' src='/profile/<%= Blog.image %>'>
 <%let date= Blog.created.toDateString() %>
 <% date=date.slice(4,date.length) %>
 <div id="author_info">
-    <% if(!(Blog.author["profile_pic"])){%>
-    <img id="profile_pic" src="https://www.pngarts.com/files/3/Avatar-Transparent-Image.png">
-    <% }else{ %>
-    <img id="profile_pic" src="/profile/<%=Blog.author.profile_pic %>">
-    <% } %>
-
-    <p><%= Blog.author.username %></p>
-    <p><%= date %></p>
-<% if(isLoggedIn){%>    
-<% if(currentUser && !(currentUser._id.equals(Blog.author.id))){%>
-    <% const following = currentUser.following;
-       var action=(following.indexOf(Blog.author.id)>-1)? "Unfollow":"Follow"; 
-       console.log(typeof following[0])%>
-       <% if(following.indexOf(Blog.author.id) > -1){%>
-        <button id="fl_btn" class="followed" data-action="<%=action%>" data-follower="<%= currentUser._id %>" data-following="<%= Blog.author.id %>"  onclick="follows(this.id)" >Follow</button>
-        <%}else{%>
-        <button id="fl_btn" class="unfollowed" data-action="<%=action%>" data-follower="<%= currentUser._id %>" data-following="<%= Blog.author.id %>"  onclick="follows(this.id)" >Follow</button>
-        <% } %>
-        <% } %>
-<%} %>
+    <div class="item-1">
+        <div>
+            <% if(!(Blog.author["profile_pic"])){%>
+            <img id="profile_pic" src="https://www.pngarts.com/files/3/Avatar-Transparent-Image.png">
+            <% }else{ %>
+            <img id="profile_pic" src="/profile/<%=Blog.author.profile_pic %>">
+            <% } %>
+        </div>
+        <div>
+            <p><strong><%= Blog.author.username %></strong></p>
+            <p><strong><%= date %></strong></p>
+            <% if(isLoggedIn){%>    
+                <% if(currentUser && !(currentUser._id.equals(Blog.author.id))){%>
+                    <% const following = currentUser.following;
+                    var action=(following.indexOf(Blog.author.id)>-1)? "Unfollow":"Follow";%>
+                    <% if(following.indexOf(Blog.author.id) > -1){%>
+                        <button id="fl_btn" class="followed" data-action="<%=action%>" data-follower="<%= currentUser._id %>" data-following="<%= Blog.author.id %>"  onclick="follows(this.id)" >Follow</button>
+                        <%}else{%>
+                        <button id="fl_btn" class="unfollowed" data-action="<%=action%>" data-follower="<%= currentUser._id %>" data-following="<%= Blog.author.id %>"  onclick="follows(this.id)" >Follow</button>
+                        <% } %>
+                        <% } %>
+                <%} %>
+        </div>
+    </div>
+    <div class="item-2">
+        <h1><%= Blog.title %></h1>
+        <p class="blog-content"><%- Blog.content %></p>
+    </div>
 </div>
-
-<p><%= Blog.title %></p>
-<div class="blog-content"><%- Blog.content %></div>
-
-
+    
 <form id="commentform"  method="POST" action="/blog/<%=Blog._id%>/comment" onclick="postComment(this.id)"> 
-<input type="text" name="text" placeholder="comment here" required>
-<button type="submit"><i class="fa fa-paper-plane-o fa-2x" aria-hidden="true"></i>
-</button>
+    <input type="text" name="text" placeholder="comment here" required>
+    <button type="submit">Comment</button>
 </form>
 
 
@@ -60,11 +61,7 @@
 
 </div>
 <% }) %>
-     <% if(currentUser && currentUser._id.equals(Blog.author.id)){%>
-     <form action="/blog/<%=Blog._id%>/edit" method="GET">
-        <button>Edit BLOG</button>
-    </form>
-    <% }%>
+    
    </div>
      
 

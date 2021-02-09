@@ -1,48 +1,54 @@
 <%- include('partials/header') %>
 
-<form action="/profile/<%=currentUser._id %>" id="pform" method="POST" enctype="multipart/form-data">
+    <% var url=`/profile/${currentUser._id}/uploadimage`%>
     <div class="user_profile">
-    <div id="user_profile_pic">
-        <button  id="profile_upload" onclick="uploadProfile()" type="button">
-            <% if(!currentUser.profile_pic){ %>
-                <i class="fa fa-user"></i>
-            <% }else{%>
-            <img style="width:100%;height:100%;border-radius:90px;" src="/profile/<%=currentUser.profile_pic %>">
-             <%}%>
+        <div id="user_profile_pic">
+        
+            <button  id="profile_upload" type="button">
+                <% if(!currentUser.profile_pic){ %>
+                    <i class="fa fa-user"></i>
+                <% }else{%>
+                <img style="width:100%;height:100%;border-radius:120px;" src="/profile/<%=currentUser.profile_pic %>">
+                <%}%>
+                <div onclick="uploadProfile('<%=url%>')" id="overlay">Choose Image<br/><i style="font-size:30px;" class="fas fa-camera"></i></div>
             </button>
-    </div>
+            <div id="filename"></div>
+        </div>
+
     <div id="user_info">
+        <form action="/profile/<%=currentUser._id %>" method="POST">
+        <h1>User Info</h1>
+        <hr>
+        <div>
+            <label for="name">Name<br> </label>
+            <input id="name" class="onlyReadable notallowed"  type="text" name="f_name"  placeholder="Enter Your Name" value="<%=currentUser.full_name%>" readonly/>
+        </div>
     
-    <h1>User Info</h1>
-    <hr>
-    <div>
-        <label for="name">Name<br> </label>
-        <input id="name" class="onlyReadable"  type="text" name="f_name"  placeholder="Enter Your Name" readonly/>
-    </div>
-    
-    <div>
-        <label for="bio">Bio<br></label>
-        <input  id="bio" class="onlyReadable" type="text" name="about" placeholder="Write about yourself" readonly/>
-    </div>
-    <h1>Social</h1>
-    <hr>
-    <div>
-        <span><i class="fa fa-envelope"></i> </span><input class="onlyReadable" type="text" name="email"  placeholder="Email" readonly>
-    </div>
-    <div>
-        <span><i class="fa fa-twitter"></i> twitter.com/</span><input class="onlyReadable" type="text" name="twitter" placeholder="username" readonly>
-    </div>
-    <div>
-        <span><i class="fa fa-instagram"></i> instagram.com/</span><input class="onlyReadable" type="text" name="instagram" placeholder="username" readonly/>
-    </div>
-    <div>
-        <span><i class="fa fa-facebook"></i> facebook.com/</span><input class="onlyReadable" type="text" name="fb" placeholder="Pagename"/>
-    </div>
-    <div>
-        <button class="submit_btn" id="save_Btn" style="display:none;" type="submit">Save <i class="fa fa-save"></i></button>
-        <button class="submit_btn" type="button" id="Edit_btn" onclick="changestatus()">Edit <i class="fa fa-pencil"></i></button>
+        <div>
+            <label for="bio">Bio<br></label>
+            <input  id="bio" class="onlyReadable notallowed" type="text" name="about" placeholder="Write about yourself" value="<%=currentUser.about%>" readonly/>
+        </div>
+        <h1>Social</h1>
+        <hr>
+        <div>
+            <span><i class="fa fa-envelope"></i> </span><input class="onlyReadable notallowed" type="text" name="email"  placeholder="Email" readonly>
+        </div>
+        <div>
+            <span><i class="fab fa-twitter"></i> twitter.com/</span><input class="onlyReadable notallowed" type="text" name="twitter" value="<%=currentUser.twitac%>" placeholder="username" readonly>
+        </div>
+        <div>
+            <span><i class="fab fa-instagram"></i> instagram.com/</span><input class="onlyReadable notallowed" type="text" name="instagram" placeholder="username"value="<%=currentUser.instac%>" readonly/>
+        </div>
+        <div>
+            <span><i class="fab fa-facebook"></i> facebook.com/</span><input class="onlyReadable notallowed" type="text" name="facebook" value="<%=currentUser.fbpg%>" placeholder="Pagename"/>
+        </div>
+        <div>
+            <button class="submit_btn" id="save_Btn" style="display:none;" type="submit">Save <i class="far fa-save"></i></button>
+            <button class="submit_btn" type="button" id="Edit_btn" onclick="changestatus()">Edit <i class="far fa-edit"></i></button>
+        </div>
+        </form>
     </div>
 </div>
-</div>
-</form>
+
+
 <%- include('partials/footer') %>

@@ -1,5 +1,5 @@
 <%- include('partials/header') %>
-<div id='blogs-form'>
+<div class='blogs-form'>
     <form  method="POST" enctype=multipart/form-data action="/blog/new" >
 
         <div>
@@ -10,7 +10,8 @@
         <div>
             <label for='img'>Image</label>
             <button title="Upload Image here" onclick="uploadfile()" class="Upload_btn"><i class="material-icons" style="font-size:60px;">add_a_photo</i></button>
-            <input id="img" name="image" type="file" accept="image/*" hidden required>
+            <div id="filename2"></div>
+            <input onchange="UploadBlogImage()" id="img" name="image" type="file" accept="image/*" hidden>
         </div>
         
         <div>
@@ -19,7 +20,7 @@
         </div>
         
         <div>
-            <button id="submit_button" type="submit">Publish</button>
+            <button class="submit_button" type="submit">Publish</button>
         </div>
 
     </form>

@@ -2,7 +2,7 @@ const express=require("express");
 const router=express.Router(/*{mergerouterams:true}*/);
 const Blog=require("../models/blog");
 const middleware=require("../middleware/index");
-const upload=require("../classes/upload");
+const upload=require("../module/upload");
 
 //==================================Create Blog=========================================//
 router.get("/new",middleware.isLoggedIn,(req,res)=>{
@@ -45,24 +45,30 @@ router.get("/:id",(req,res)=>{
 //=========================================================================================//
 //======================================Edit blog==========================================//
 router.get("/:id/edit",middleware.checkBlogOwnership,(req,res)=>{
+   
     Blog.findById(req.params.id,(err,foundBlog)=>{
            if(err){
                console.log(err);
            }else{
-            res.render('editblog',{foundBlog:foundBlog});
+                res.render('editblog',{foundBlog:foundBlog});
            }
     })
     
 
 })
-router.put("/:id/edit",middleware.checkBlogOwnership,(req,res)=>{
-    const blog={title:req.body.title,image:req.body.image,content:req.body.content};
-    Blog.findByIdAndUpdate(req.params.id,blog,(err,updatedBlog)=>{
+router.put("/:id/edit",upload.single('image'),middleware.checkBlogOwnership,(req,res)=>{
+    const title=req.body.title;
+    const image=req.file.filename;
+    const content=req.body.content;
+    const updatedBlog={title:title,image:image,content:content};
+    Blog.findByIdAndUpdate(req.params.id,updatedBlog,(err,updatedBlog)=>{
         if(err){
             res.redirect("/");
         }
         else{
+            req.flash("success","Post updated successfully");
             res.redirect("/blog/"+req.params.id);
+            
         }
     })
 })
@@ -75,8 +81,9 @@ router.delete("/:id/delete",middleware.checkBlogOwnership,(req,res)=>{
             res.redirect("/");
         }
         else{
+            req.flash("success","Post deleted successfully");
             res.redirect("/");
-            req.flash("Post deleted successfully","success");
+            
         }
     })
 })

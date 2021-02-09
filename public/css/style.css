@@ -44,7 +44,7 @@
   }
   
 .navlinks{
-    flex-basis:40%;
+    flex-basis:50%;
     font-size: 20px;
     font-weight: 500;
   }
@@ -73,14 +73,9 @@
     display: none;
 }
 
-.nav img{
-    margin-top: 8px; 
-    position: relative; 
-    height:50px;
-    width:50px;
-}
 
-#blogs-form{
+
+.blogs-form{
     max-width: 80%;
     margin:auto;
     display:flex;
@@ -90,19 +85,19 @@
     align-items: center;
 }
 
-#blogs-form>form{
+.blogs-form>form{
     display:flex;
     flex-direction: column;
     margin:auto;
     width:70%;
 }
 
-#blogs-form>form>div{
+.blogs-form>form>div{
     display:flex;
     flex-direction: column;
 }
 
-#blogs-form>form>div>input[type="text"]{
+.blogs-form>form>div>input[type="text"]{
     max-width: 100%;
     padding:10px 15px;
     margin:10px;
@@ -111,7 +106,7 @@
     transition:0.3s all;
 }
 
-#blogs-form>form>div>textarea{
+.blogs-form>form>div>textarea{
     max-width: 100%;
     padding:10px 15px;
     font-size:16px;
@@ -121,6 +116,15 @@
     border-radius:5px;
     border:2px solid lightgray;
     transition:0.3s all;
+}
+
+#filename2{
+    background-color:rgb(105, 190, 105);
+    font-size:15px;
+    width:60%;
+    margin:3px 0px;
+    border-radius:5px;
+    color:white;
 }
 
 .Upload_btn{
@@ -140,7 +144,7 @@
 
 }
 
-#submit_button{
+.submit_button{
     width:150px;
     padding:8px;
     margin:10px;
@@ -153,17 +157,17 @@
     transition:0.3s all;
 }
 
-#submit_button:hover{
+.submit_button:hover{
     background-color: white;
     color:dodgerblue;
     border:2px solid dodgerblue;
 
 }
 
-#blogs-form textarea:hover{
+.blogs-form textarea:hover{
     border:2px solid dodgerblue;
 }
-#blogs-form input[type="text"]:hover{
+.blogs-form input[type="text"]:hover{
     border:2px solid dodgerblue;
 }
 
@@ -184,30 +188,7 @@
 
 
 
-@media screen and (max-width: 800px) {
-    #blogs-form{
-        max-width:90%;
-    }
-    #blogs-form>form{
-        max-width: 90%;
-    }
-    
-    .container{
-        width:80%;
-        padding:10px;
-    }
-    .container #commentform input{
-        width:60%;
-        max-width:200px;
-    }
-    .container #commentform button{
-        padding:none;
-        
-    }
-    
-    
-    
-    }
+
 /*For Mobile-phone */
 
 .comment{
@@ -259,43 +240,69 @@
 }
 .container .blog-content{
     text-align: justify;
+    font-size:18px;
     width:100%;
 }
+
+.container #author_info{
+    display:flex;
+    flex-direction:column;
+    margin:10px 0px;
+}
+
+.item-1{
+    display:flex;
+    align-items: center;
+}
+.item-1>div{
+   width:100px
+}
+.item-2{
+    padding:15px;
+}
+.item-2>p{
+    margin-top:20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
 .container #commentform{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    max-width: 400px;
-    width:90%;
+    display:flex;
+    margin-top: 20px 0px;
+    width:80%;
 }
 .container #commentform input {
- width:360px;
+ max-width:60%;
+ width:400px;
  padding:10px;
  height:35px;
+ font-size:16px;
  border:1px solid gray;
- border-radius:25px;
+ border-radius:5px;
 
 }
 .container #commentform button{
-    border:none;
-    background-color: transparent;
-    color:steelblue;
+    border:1px solid grey;
+    background-color: dodgerblue;
+    color:white;
     padding: 4px;
+    max-width:30%;
+    width:120px;
+    font-size:16px;
     transition: 0.5 all;
+    border-radius:4px;
 }
 .container #commentform button:hover{
-    color:blue;
+    background-color:rgb(10, 124, 238);
 }
 
 #profile_pic{
-    float: left;
     border-radius:100%;
-    height:80px;
-    width:80px;
+    height:90px;
+    width:90px;
     border-top: 4px solid blue;
     border-bottom: 4px solid red;
     border-left: 4px solid yellow;
     border-right: 4px solid green;
-    padding: 3px;
+    
 }
 
 #edit_profile{
@@ -315,7 +322,7 @@
     padding:10px;
 }
 
-#register-form{
+.register-form{
     width:90%;
     max-width:400px;
     color:black;
@@ -328,7 +335,7 @@
     
     
 }
-#register-form input[type="text"],input[type="password"],input[type="email"]{
+.register-form input[type="text"],input[type="password"],input[type="email"]{
     display: block;
     width:80%;
     margin: 0 auto;
@@ -343,7 +350,7 @@
     transition: 0.5s all;
 }
 
-#register-form select{
+.register-form select{
     width:30%;
     display: block;
     margin-top: 20px;
@@ -356,8 +363,7 @@
     border:none;
     border-bottom:2px solid darkgrey;
 }
-
-#register-form input[type="checkbox"]{
+.register-form input[type="checkbox"]{
     margin-left:10% ;
     margin-top: 20px;
     width:15px;
@@ -367,7 +373,7 @@
 }
 
 
-#register-form p{
+.register-form p{
     color:black;
     font-size: 30px;
     font-weight: 700;
@@ -379,10 +385,10 @@
 
 
 
-#login-register_btn{
+.login-register_btn{
     display:block;
     margin:0 auto;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom:20px;
     width:90%;
     height:40px;
@@ -398,12 +404,12 @@
 
 
 
-#register-form input:hover{
+.register-form input:hover{
     border-bottom: 2px solid dodgerblue;
 }
 
 
-#login-register_btn:hover{
+.login-register_btn:hover{
     background-color: white;
     color:#32CD32;
     border:2px solid #32CD32;
@@ -448,18 +454,71 @@
     display:flex;
     width:80%;
     max-width: 1000px;
-    margin:0 auto;
+    margin:auto;
     margin-top: 20px;
     
 }
 
-#user_profile_pic >button{
-    width:60%;
-    height: 180px;
+
+
+#user_profile_pic >#profile_upload{
+    width:225px;
+    height: 225px;
+    position: relative;
     border: none;
-    border-radius:50%;
+    border-radius:60%;
     
 }
+
+#up_image{
+    padding:6px 10px;
+    margin-top:5px;
+    margin-left:58px;
+    background-color:rgb(53, 173, 53);
+    font-size:16px;
+    border:1px solid gray;
+    color:white;
+    border-radius:5px;
+    transition:0.3s all;
+}
+
+#filename{
+    color:white;
+    background-color:gray;
+    width:80%;
+    font-size:14px;
+    font-family:Arial, Helvetica, sans-serif;
+    border-radius:4px;
+}
+
+
+#up_image:hover{
+    background-color:green;
+
+}
+
+.notallowed{
+    cursor:not-allowed;
+}
+
+#overlay{
+    display:none;
+    position:absolute;
+    top:0; 
+    height:225px; 
+    width:225px;
+    background-color:black; 
+    color:white;
+    padding-top:100px;
+    opacity:0.7;
+    border-radius:50%;
+    cursor:pointer;
+}
+
+#profile_upload:hover #overlay{
+    display:block;
+}
+
 
 .submit_btn{
     width:30%;
@@ -490,7 +549,6 @@
     margin: 0 auto;
     padding: 20px;
     margin-top: 20px;
-    justify-content: space-between;
     align-items: flex-start;
     max-width: 1100px;
     flex-wrap: wrap;
@@ -499,13 +557,19 @@
 
 .blog{
     flex-basis: 30%;
-    margin-bottom: 2%;
+    margin:10px 1.5%;
     border:2px solid lightgray;
-    padding: 7px;
+    padding:1%;
     border-radius: 5px;
     transition: 0.5s all;
     max-height: 100%;
     
+}
+.blog:hover{
+    flex-basis: 30.8%;
+    margin-left:1.5%;
+    margin-right:1.5%;
+    box-shadow: 0px 0px 15px dodgerblue;
 }
 
 .img-container{
@@ -537,6 +601,24 @@
     color: black;
 }
 
+@media screen and (max-width: 770px) {
+    .blogs-form{
+        max-width:90%;
+    }
+    .blogs-form>form{
+        max-width: 90%;
+    }
+    
+    .container{
+        width:90%;
+        padding:10px;
+    }
+    #commentform{
+        max-width: 90%;
+        
+    }
+    
+}
 
 
 @media  screen and (max-width:930px){
@@ -595,14 +677,11 @@
       .active >ul>li>a{
           display:block;
       }
-    
-    
-
+      .user_profile{
+          flex-direction:column;
+      }
+      
 }
 
-.blog:hover{
-    flex-basis: 30.8%;
-    
-    box-shadow: 0px 0px 15px dodgerblue;
-}
+
 

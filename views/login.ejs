@@ -1,24 +1,25 @@
 <%- include('partials/header') %>
 
-<div id='register-form'>
+<div class='register-form'>
 
 <form  method="POST" action='/login'>
-    
     <p>LOGIN</p>
     <div>
-      
-    <input type='text' id='uname'  placeholder="Username or Email" name='username'>
+      <input type='text' id='uname'  placeholder="Username or Email" name='username'>
     </div>
     <div>
-  <input type='password' id='pswd' placeholder='Password' name='password'>
-</div>
-<div>
-    <button  id="login-register_btn" type='submit'>Login</button>
-  </div>
+      <input type='password' id='pswd' placeholder='Password' name='password'>
+    </div>
+    <div>
+      <input type='checkbox' onclick="show()"> Show Password
+    </div>
+    <div>
+      <button  class="login-register_btn" type='submit'>Login</button>
+    </div>
 
-<div class="fglink">
-  <a href="">Forgot Password?Click here</a>
-</div>
+    <div class="fglink">
+      <a href="/account/challenge/fgtpswd">Forgot Password?Click here</a>
+    </div>
    
 
 </form>
