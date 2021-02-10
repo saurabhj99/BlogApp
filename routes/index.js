@@ -79,8 +79,7 @@ router.post("/changepswd/:id",(req,res)=>{
             const userwithHash=await User.findByUsername(userFound.email,true)
             userwithHash.setPassword(req.body.password,function(){
                 userwithHash.save();
-                
-                req.flash("success","Password reset successfully please login with your new password")
+               req.flash("success","Password reset successfully please login with your new password")
                 res.redirect('/login')
                 
             });

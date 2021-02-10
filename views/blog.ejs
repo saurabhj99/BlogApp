@@ -14,7 +14,7 @@
             <% } %>
         </div>
         <div>
-            <p><strong><%= Blog.author.username %></strong></p>
+            <p><strong><%=Blog.author.full_name?Blog.author.full_name:Blog.author.username%></strong></p>
             <p><strong><%= date %></strong></p>
             <% if(isLoggedIn){%>    
                 <% if(currentUser && !(currentUser._id.equals(Blog.author.id))){%>

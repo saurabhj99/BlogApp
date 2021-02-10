@@ -15,6 +15,7 @@ const UserSchema=new mongoose.Schema({
     twitac:String,
     instac:String,
     fbpg:String,
+    blogCount:{type:Number,default:0}
     })
 
 UserSchema.methods.validPassword =async function (password){
