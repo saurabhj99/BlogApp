@@ -22,6 +22,7 @@ const url =process.env.DATABASEURL||"mongodb://localhost:27017/Daily_Blogs";
 app.set('view engine','ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/profile', express.static('uploads'));
+app.use(express.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
 const commentRoutes=require("./routes/comments");
