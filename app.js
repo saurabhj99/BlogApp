@@ -24,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/profile', express.static('uploads'));
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(methodOverride("_method"));
 
 const commentRoutes=require("./routes/comments");
 const BlogRoutes=require("./routes/blogs");
@@ -73,9 +74,9 @@ app.use(function(req,res,next){
     next();
 
 })
-app.use(methodOverride("_method"));
 
 
+//Mongoose Configuration
 mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.set('useCreateIndex',true);
 mongoose.set('useFindAndModify',false);
@@ -86,16 +87,6 @@ app.use("/blog",BlogRoutes);
 app.use("/follow",followRoutes);
 app.use("/profile",profileRoutes);
 app.use("/blog/:id/comment",commentRoutes);
-
-
-
-
-
-
-
-
-
-
 
 
 //==========================Server Setup=================================================//

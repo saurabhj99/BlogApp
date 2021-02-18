@@ -16,5 +16,7 @@ A simple Blog app where a Blog writer can create new Blogs and readers can revie
   </ul>
 </h3>
 
+
+
 LINK TO THE WORKING SITE
 <a href="http://dailyblogs2.herokuapp.com/">CLICK HERE</a>
