@@ -19,4 +19,4 @@ A simple Blog app where a Blog writer can create new Blogs and readers can revie
 
 
 LINK TO THE WORKING SITE
-<a href="http://dailyblogs2.herokuapp.com/">CLICK HERE</a>
+<a href="http://daily-blogs2.herokuapp.com/">CLICK HERE</a>
